@@ -6,4 +6,4 @@ const NetflixSlider = () => {
   )
 }
 
-export default NetflixSlider
+export default NetflixSlider;
