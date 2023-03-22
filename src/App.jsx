@@ -3,20 +3,21 @@ import NetflixSlider from './components/NetflixSlider';
 
 
 const App = () => {
-
   const [myData, setMyData] = useState([]);
+
+ 
 
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '841d3d62e4msh4d331cc7eefed46p1ed864jsn450ba9ceb17c',
-      'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
+      'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+      'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST
     }
   };
 
   const fetchData = async ()=>{
    try {
-    // const res = await fetch('https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en', options);
+    const res = await fetch('https://netflix54.p.rapidapi.com/search/?query=stranger&offset=0&limit_titles=50&limit_suggestions=20&lang=en', options);
     const data = await res.json();
     console.log(res);
     console.log(data);
@@ -28,9 +29,9 @@ const App = () => {
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, []);
   
-  return (
+  return(
     <>
     {
       myData.map((curElem) => {
@@ -39,7 +40,8 @@ const App = () => {
       })
     }
     </>
-  )
+    )
+  
 }
 
 export default App;
