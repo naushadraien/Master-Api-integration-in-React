@@ -10,8 +10,8 @@ const App = () => {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-      'X-RapidAPI-Host': process.env.REACT_APP_RAPID_API_HOST
+      'X-RapidAPI-Key': '841d3d62e4msh4d331cc7eefed46p1ed864jsn450ba9ceb17c',
+      'X-RapidAPI-Host': 'netflix54.p.rapidapi.com'
     }
   };
 
